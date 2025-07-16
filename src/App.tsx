@@ -3,6 +3,8 @@ import Form from "./components/Form";
 import Heading from "./components/Heading";
 import Nav from "./components/Nav";
 import Sample from "./components/Sample";
+import MotionLine from "./components/MotionLine";
+import SectionIntro from "./components/SectionIntro";
 
 function App() {
   const { scrollY } = useScroll();
@@ -30,6 +32,7 @@ function App() {
         transition={{ duration: 2, ease: "easeInOut" }}
       />
 
+      {/* Navigation */}
       <Nav />
 
       {/* Heading Overlay */}
@@ -70,12 +73,52 @@ function App() {
         <Form />
       </div>
 
+      <SectionIntro
+        title="ABOUT US"
+        descriptionLines={[
+          "At EGK, we simplify",
+          "construction processes",
+          "to increase your project",
+          "velocity."
+        ]}
+      />
+
+      <MotionLine />
+
       <Sample />
+      <SectionIntro
+        title="WHAT WE CAN DO FOR YOU"
+        descriptionLines={[
+          "Providing engineering",
+          "consulting solutions"
+        ]}
+        bgcolor="#AF6118"
+      />
+
+
       <Sample />
+      <SectionIntro
+        title="FEATURED PROJECTS"
+        descriptionLines={[
+          "Every project has its",
+          "unique DNA"
+        ]}
+      />
+
+      <MotionLine />
+
       <Sample />
-      <Sample />
-      <Sample />
-      <Sample />
+      <SectionIntro
+        title="WE WORK WITH TOP NOTCH CLIENTS"
+        descriptionLines={[
+          "Engineers who",
+          "understand your",
+          "business"
+        ]}
+        bgcolor="black"
+      />
+
+
     </>
   );
 }
