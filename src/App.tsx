@@ -82,10 +82,9 @@ function App() {
           "velocity."
         ]}
       />
-
       <MotionLine />
-
       <Sample />
+      
       <SectionIntro
         title="WHAT WE CAN DO FOR YOU"
         descriptionLines={[
@@ -94,9 +93,8 @@ function App() {
         ]}
         bgcolor="#AF6118"
       />
-
-
       <Sample />
+
       <SectionIntro
         title="FEATURED PROJECTS"
         descriptionLines={[
@@ -104,10 +102,9 @@ function App() {
           "unique DNA"
         ]}
       />
-
       <MotionLine />
-
       <Sample />
+
       <SectionIntro
         title="WE WORK WITH TOP NOTCH CLIENTS"
         descriptionLines={[
@@ -117,7 +114,7 @@ function App() {
         ]}
         bgcolor="black"
       />
-
+      <Sample />
 
     </>
   );
