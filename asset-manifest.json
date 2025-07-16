@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/optimix/static/css/main.f855e6bc.css",
-    "main.js": "/optimix/static/js/main.79cf97cb.js",
+    "main.css": "/optimix/static/css/main.e6c13ad2.css",
+    "main.js": "/optimix/static/js/main.7188c8b4.js",
     "static/js/453.2c73c63c.chunk.js": "/optimix/static/js/453.2c73c63c.chunk.js",
-    "static/media/logo.svg": "/optimix/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/optimix/index.html",
-    "main.f855e6bc.css.map": "/optimix/static/css/main.f855e6bc.css.map",
-    "main.79cf97cb.js.map": "/optimix/static/js/main.79cf97cb.js.map",
+    "main.e6c13ad2.css.map": "/optimix/static/css/main.e6c13ad2.css.map",
+    "main.7188c8b4.js.map": "/optimix/static/js/main.7188c8b4.js.map",
     "453.2c73c63c.chunk.js.map": "/optimix/static/js/453.2c73c63c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.79cf97cb.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.7188c8b4.js"
   ]
 }
