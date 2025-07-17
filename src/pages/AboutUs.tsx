@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import MotionLine from '../components/MotionLine';
+import Contact from './Contact';
 
 function AboutUs() {
     return (
@@ -21,6 +22,7 @@ function AboutUs() {
                 </div>
                 <Typography variant="h4">About Us</Typography>
             </Box>
+            <Contact />
         </>
     );
 }
