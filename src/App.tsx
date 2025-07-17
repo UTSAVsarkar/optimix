@@ -26,7 +26,7 @@ function App() {
   const renderPage = () => {
     switch (activeNavItem) {
       case 'Home':
-        return <Home scrollToContact={scrollToContact} />;
+        return <Home scrollToContact={scrollToContact} onNavChange={handleNavChange} />;
       case 'About Us':
         return <AboutUs />;
       case 'Services':
@@ -36,7 +36,7 @@ function App() {
       case 'Contact':
         return <Contact />;
       default:
-        return <Home />;
+        return <Home onNavChange={handleNavChange} />;
     }
   };
 

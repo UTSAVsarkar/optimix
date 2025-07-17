@@ -10,7 +10,7 @@ import ServiceImageComponent from './ServiceImageComponent';
 export default function Services() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    
+
     return (
         <>
             <Box
@@ -34,16 +34,16 @@ export default function Services() {
                     transition={{ duration: 1, ease: 'easeIn' }}
                 >
                     <Typography variant="h4">OUR SERVICES</Typography>
-<h1 className="responsive-heading">
-    Our diverse areas of <br />
-    expertise are designed to <br />
-    fit the changing needs of <br />
-    your project
-</h1>
-<SouthEastIcon className="responsive-icon" />
+                    <h1 className="responsive-heading">
+                        Our diverse areas of <br />
+                        expertise are designed to <br />
+                        fit the changing needs of <br />
+                        your project
+                    </h1>
+                    <SouthEastIcon className="responsive-icon" />
 
-<style>
-{`
+                    <style>
+                        {`
     .responsive-heading {
         font-size: 70px;
         line-height: 1.4em;
@@ -74,7 +74,7 @@ export default function Services() {
         }
     }
 `}
-</style>
+                    </style>
 
                 </motion.div>
                 <Box

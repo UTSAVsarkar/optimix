@@ -4,9 +4,18 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import ProjectGrid from './ServiceGrid';
 
-function ServicesIntro() {
+interface Props {
+    onNavChange: (item: string) => void;
+}
+
+function ServicesIntro(props: Props) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: '-100px 0px' });
+
+    const handleButtonClick = () => {
+        window.scrollTo({ top: 0 });
+        props.onNavChange('Services')
+    };
 
     return (
         <>
@@ -40,6 +49,7 @@ function ServicesIntro() {
                                         borderColor: 'white',
                                     },
                                 }}
+                                onClick={handleButtonClick}
                             >
                                 Read More
                             </Button>

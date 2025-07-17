@@ -10,9 +10,10 @@ import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
 
 interface Props {
     scrollToContact?: boolean;
+    onNavChange: (item: string) => void;
 }
 
-const Home: React.FC<Props> = ({ scrollToContact }) => {
+const Home: React.FC<Props> = ({ scrollToContact, onNavChange }) => {
     const { scrollY } = useScroll();
 
     const bgY = useTransform(scrollY, [0, 500], ["0%", "50%"]);
@@ -85,7 +86,7 @@ const Home: React.FC<Props> = ({ scrollToContact }) => {
             </div>
 
             <AboutUsIntro />
-            <ServicesIntro />
+            <ServicesIntro onNavChange={onNavChange} />
             <ProjectsIntro />
             <ClientIntro />
             <div ref={contactRef}>
