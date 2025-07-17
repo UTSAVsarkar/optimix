@@ -74,7 +74,7 @@ export default function Nav(props: Props) {
           backgroundColor: 'transparent',
           boxShadow: 'none',
           position: 'absolute',
-          top: 0,
+          top: 10,
           left: 0,
           width: '100%',
           zIndex: 10,

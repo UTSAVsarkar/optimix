@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, useTheme, useMediaQuery } from '@mui/material';
 import MotionLine from '../../components/MotionLine';
 import SouthEastIcon from '@mui/icons-material/SouthEast';
 import { motion } from 'framer-motion';
@@ -8,6 +8,9 @@ import { services } from './ServicesConfig';
 import ServiceImageComponent from './ServiceImageComponent';
 
 export default function Services() {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    
     return (
         <>
             <Box
@@ -31,20 +34,48 @@ export default function Services() {
                     transition={{ duration: 1, ease: 'easeIn' }}
                 >
                     <Typography variant="h4">OUR SERVICES</Typography>
-                    <h1 style={{ fontSize: 70, lineHeight: '1.4em' }}>
-                        Our diverse areas of <br />
-                        expertise are designed to <br />
-                        fit the changing needs of <br />
-                        your project
-                    </h1>
-                    <SouthEastIcon
-                        sx={{
-                            fontSize: '10rem',
-                            stroke: '#ccc',
-                            strokeWidth: 0.5,
-                            fill: 'none',
-                        }}
-                    />
+<h1 className="responsive-heading">
+    Our diverse areas of <br />
+    expertise are designed to <br />
+    fit the changing needs of <br />
+    your project
+</h1>
+<SouthEastIcon className="responsive-icon" />
+
+<style>
+{`
+    .responsive-heading {
+        font-size: 70px;
+        line-height: 1.4em;
+    }
+
+    .responsive-icon {
+        font-size: 10rem;
+        stroke: #ccc;
+        stroke-width: 0.5;
+        fill: none;
+    }
+
+    @media (max-width: 768px) {
+        .responsive-heading {
+            font-size: 40px;
+        }
+        .responsive-icon {
+            font-size: 5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .responsive-heading {
+            font-size: 28px;
+        }
+        .responsive-icon {
+            font-size: 3rem;
+        }
+    }
+`}
+</style>
+
                 </motion.div>
                 <Box
                     sx={{
@@ -60,7 +91,7 @@ export default function Services() {
                     </Box>
                 </Box>
             </Box>
-            <ServiceImageComponent />
+            {!isMobile && <ServiceImageComponent />}
             <Contact />
         </>
     );
