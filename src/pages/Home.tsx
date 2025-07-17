@@ -1,11 +1,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Form from "../components/Form";
 import Heading from "../components/Heading";
-import MotionLine from "../components/MotionLine";
-import Sample from "../components/Sample";
-import SectionIntro from "../components/SectionIntro";
 import Contact from "./Contact";
 import { useRef, useEffect } from "react";
+import AboutUsIntro from "../IntroPages/AboutUsIntro";
+import ClientIntro from "../IntroPages/ClientIntro";
+import ProjectsIntro from "../IntroPages/ProjectsIntro";
+import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
 
 interface Props {
     scrollToContact?: boolean;
@@ -83,50 +84,10 @@ const Home: React.FC<Props> = ({ scrollToContact }) => {
                 <Form />
             </div>
 
-            <SectionIntro
-                title="ABOUT US"
-                descriptionLines={[
-                    "At EGK, we simplify",
-                    "construction processes",
-                    "to increase your project",
-                    "velocity."
-                ]}
-            />
-            <MotionLine />
-            <Sample />
-
-            <SectionIntro
-                title="WHAT WE CAN DO FOR YOU"
-                descriptionLines={[
-                    "Providing engineering",
-                    "consulting solutions"
-                ]}
-                bgcolor="#AF6118"
-            />
-            <Sample />
-
-            <SectionIntro
-                title="FEATURED PROJECTS"
-                descriptionLines={[
-                    "Every project has its",
-                    "unique DNA"
-                ]}
-            />
-            <MotionLine />
-            <Sample />
-
-            <SectionIntro
-                title="WE WORK WITH TOP NOTCH CLIENTS"
-                descriptionLines={[
-                    "Engineers who",
-                    "understand your",
-                    "business"
-                ]}
-                bgcolor="black"
-            />
-            <Sample />
-
-            {/* Contact Section at the Bottom */}
+            <AboutUsIntro />
+            <ServicesIntro />
+            <ProjectsIntro />
+            <ClientIntro />
             <div ref={contactRef}>
                 <Contact />
             </div>
