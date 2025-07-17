@@ -24,7 +24,6 @@ const Home: React.FC<Props> = ({ scrollToContact }) => {
         }
     }, [scrollToContact]);
 
-
     return (
         <>
             {/* Background Section */}

@@ -15,7 +15,8 @@ function App() {
   const handleNavChange = (item: string) => {
     if (item === 'Contact') {
       setActiveNavItem('Home');
-      setScrollToContact(true); // trigger scroll in Home
+      setScrollToContact(false); // Reset trigger
+      setTimeout(() => setScrollToContact(true), 0); // React will now detect change
     } else {
       setActiveNavItem(item);
       setScrollToContact(false);
