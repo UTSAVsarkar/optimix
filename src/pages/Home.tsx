@@ -6,7 +6,6 @@ import Sample from "../components/Sample";
 import SectionIntro from "../components/SectionIntro";
 import Contact from "./Contact";
 import { useRef, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 interface Props {
     scrollToContact?: boolean;
