@@ -1,7 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useRef } from 'react';
 
-const MotionLine = () => {
+interface MotionLineProps {
+  color?: string; // Optional, default fallback
+}
+
+const MotionLine: React.FC<MotionLineProps> = ({ color = '#000' }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -14,7 +18,7 @@ const MotionLine = () => {
       style={{
         transformOrigin: 'left',
         height: '0.5px',
-        backgroundColor: '#000',
+        backgroundColor: color,
         width: '100%',
         margin: '2rem 0',
       }}

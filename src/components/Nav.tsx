@@ -11,56 +11,59 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
+  navItems: string[];
+  activeItem: string;
+  onNavChange: (item: string) => void;
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
 
 export default function Nav(props: Props) {
-  const { window } = props;
+  const { window, navItems, activeItem, onNavChange } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen((prev) => !prev);
   };
 
-  /* Use for mobile view */
+  const handleNavItemClick = (item: string) => {
+    onNavChange(item);
+    setMobileOpen(false);
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Box
         component="img"
         src={`${process.env.PUBLIC_URL}/logo.svg`}
         alt="Logo"
-        sx={{
-          height: 50,
-          my: 2,
-          mx: 'auto',
-        }}
+        sx={{ height: 50, my: 2, mx: 'auto' }}
       />
-
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+            <ListItemButton onClick={() => handleNavItemClick(item)}>
+              <ListItemText
+                primary={item}
+                primaryTypographyProps={{
+                  sx: {
+                    color: activeItem === item ? '#AF6118' : 'inherit',
+                    fontWeight: activeItem === item ? 'bold' : 'normal',
+                    textAlign: 'center',
+                  },
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
     </Box>
   );
-
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -70,38 +73,43 @@ export default function Nav(props: Props) {
         sx={{
           backgroundColor: 'transparent',
           boxShadow: 'none',
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           left: 0,
-          width: "100%",
-          zIndex: 10, 
+          width: '100%',
+          zIndex: 10,
         }}
       >
         <Toolbar>
           <IconButton
             color="inherit"
-            aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
             <Box
               component="img"
               src={`${process.env.PUBLIC_URL}/logo.svg`}
               alt="logo"
-              sx={{ height: 50, display: { xs: 'none', sm: 'block' } }}
+              sx={{ height: 50 }}
             />
-          </Typography>
+          </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
+              <Button
+                key={item}
+                onClick={() => handleNavItemClick(item)}
+                sx={{
+                  color: activeItem === item ? '#AF6118' : '#fff',
+                  fontWeight: activeItem === item ? 'bold' : 'normal',
+                  '&:hover': {
+                    color: '#AF6118',
+                  },
+                }}
+              >
                 {item}
               </Button>
             ))}
@@ -110,13 +118,11 @@ export default function Nav(props: Props) {
       </AppBar>
       <nav>
         <Drawer
-          container={container}
+          container={window !== undefined ? () => window().document.body : undefined}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
