@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import AboutUs from './pages/AboutUs';
-import Services from './pages/Services';
+import Services from './pages/Services/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
@@ -42,12 +42,12 @@ function App() {
 
   return (
     <>
-      <Nav
-        navItems={navItems}
-        activeItem={activeNavItem}
-        onNavChange={handleNavChange}
-      />
-      {renderPage()}
+        <Nav
+          navItems={navItems}
+          activeItem={activeNavItem}
+          onNavChange={handleNavChange}
+        />
+        {renderPage()}
     </>
   );
 }
