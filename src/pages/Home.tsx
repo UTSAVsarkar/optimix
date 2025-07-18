@@ -3,7 +3,7 @@ import Form from "../components/Form";
 import Heading from "../components/Heading";
 import Contact from "./Contact";
 import { useRef, useEffect } from "react";
-import AboutUsIntro from "../IntroPages/AboutUsIntro";
+import AboutUsIntro from "../IntroPages/AboutIntro/AboutUsIntro";
 import ClientIntro from "../IntroPages/ClientIntro";
 import ProjectsIntro from "../IntroPages/ProjectsIntro";
 import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
@@ -85,7 +85,7 @@ const Home: React.FC<Props> = ({ scrollToContact, onNavChange }) => {
                 <Form />
             </div>
 
-            <AboutUsIntro />
+            <AboutUsIntro onNavChange={onNavChange} />
             <ServicesIntro onNavChange={onNavChange} />
             <ProjectsIntro />
             <ClientIntro />

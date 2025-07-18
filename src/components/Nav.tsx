@@ -95,6 +95,8 @@ export default function Nav(props: Props) {
               src={`${process.env.PUBLIC_URL}/logo.svg`}
               alt="logo"
               sx={{ height: 50 }}
+              onClick={()=>onNavChange('Home')}
+              style={{cursor: 'pointer'}}
             />
           </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>

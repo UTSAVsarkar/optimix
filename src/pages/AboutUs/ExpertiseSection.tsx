@@ -44,7 +44,7 @@ export default function ExpertiseSection() {
           over 25+ years
         </span>{' '}
         of combined industry experience,<br />
-        we specialize in practical, high-impact solutions across:
+        we specialize in practical, high-impact solutions across
       </h2>
 
       <div style={{
