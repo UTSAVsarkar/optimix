@@ -2,7 +2,6 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
@@ -36,14 +35,16 @@ export default function Nav(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Box
-        component="img"
-        src={`${process.env.PUBLIC_URL}/logo.svg`}
-        alt="Logo"
-        sx={{ height: 50, my: 2, mx: 'auto' }}
-      />
-      <Divider />
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: 'center',
+        backgroundColor: 'black',
+        height: '100%',
+        color: 'white',
+      }}
+      marginTop={10}
+    >
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -52,7 +53,7 @@ export default function Nav(props: Props) {
                 primary={item}
                 primaryTypographyProps={{
                   sx: {
-                    color: activeItem === item ? '#AF6118' : 'inherit',
+                    color: activeItem === item ? '#AF6118' : '#fff',
                     fontWeight: activeItem === item ? 'bold' : 'normal',
                     textAlign: 'center',
                   },
@@ -80,25 +81,29 @@ export default function Nav(props: Props) {
           zIndex: 10,
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          {/* Burger Icon on the Left (mobile only) */}
           <IconButton
             color="inherit"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+
+          {/* Logo on the Right for Mobile, Center for Desktop */}
+          <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: { xs: 'flex-end', sm: 'flex-start' } }}>
             <Box
               component="img"
               src={`${process.env.PUBLIC_URL}/logo.svg`}
               alt="logo"
-              sx={{ height: 50 }}
-              onClick={()=>onNavChange('Home')}
-              style={{cursor: 'pointer'}}
+              sx={{ height: 50, cursor: 'pointer' }}
+              onClick={() => onNavChange('Home')}
             />
           </Box>
+
+          {/* Desktop Nav Buttons */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button
@@ -118,6 +123,7 @@ export default function Nav(props: Props) {
           </Box>
         </Toolbar>
       </AppBar>
+
       <nav>
         <Drawer
           container={window !== undefined ? () => window().document.body : undefined}
@@ -127,7 +133,12 @@ export default function Nav(props: Props) {
           ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              backgroundColor: 'black',
+              color: 'white',
+            },
           }}
         >
           {drawer}
