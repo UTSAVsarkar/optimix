@@ -1,15 +1,7 @@
 import { Grid, Typography, Box } from '@mui/material';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-
-const services = [
-    { title: 'MANAGEMENT AND SUPERVISION' },
-    { title: 'STRUCTURAL ENGINEERING' },
-    { title: 'TRANSPORT AND HIGHWAY ENGINEERING' },
-    { title: 'WATER SUPPLY ENGINEERING' },
-    { title: 'PROJECT SCHEDULING' },
-    { title: 'QUALITY ASSURANCE' },
-];
+import { services } from '../../pages/Services/ServicesConfig';
 
 const ServiceCard = ({ title }: { title: string }) => {
     const ref = useRef(null);
@@ -55,7 +47,7 @@ const ServiceCard = ({ title }: { title: string }) => {
 const ProjectGrid = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={0} columns={3}>
+            <Grid container spacing={0} columns={2}>
                 {services.map((service, idx) => (
                     <ServiceCard key={idx} title={service.title} />
                 ))}
