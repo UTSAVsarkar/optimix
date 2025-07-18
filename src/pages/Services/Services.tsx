@@ -3,6 +3,7 @@ import {
     Typography,
     useTheme,
     useMediaQuery,
+    Grid,
 } from "@mui/material";
 import {
     Timeline,
@@ -11,8 +12,6 @@ import {
     TimelineConnector,
     TimelineContent,
     TimelineDot,
-    timelineOppositeContentClasses,
-    TimelineOppositeContent,
 } from "@mui/lab";
 import MotionLine from "../../components/MotionLine";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
@@ -62,24 +61,11 @@ export default function Services() {
                 >
                     {services.map((service) => (
                         isMobile ? (
-                            <Timeline
-                                sx={{
-                                    [`& .${timelineOppositeContentClasses.root}`]: {
-                                        flex: 0.1,
-                                    },
-                                }}
-                            >
-                                <TimelineItem>
-                                    <TimelineOppositeContent color="textSecondary" />
-                                    <TimelineSeparator>
-                                        <TimelineDot />
-                                        <TimelineConnector />
-                                    </TimelineSeparator>
-                                    <TimelineContent>
-                                        <ServiceCard service={service} />
-                                    </TimelineContent>
-                                </TimelineItem>
-                            </Timeline>
+                            <Box sx={{ flexGrow: 1 }}>
+                                <Grid container spacing={0} columns={3}>
+                                    <ServiceCard service={service} />
+                                </Grid>
+                            </Box>
                         ) :
                             (<TimelineItem>
                                 <TimelineSeparator>
