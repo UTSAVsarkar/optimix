@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-import AboutUs from './pages/AboutUs';
+import AboutUs from './pages/AboutUs/AboutUs';
 import Services from './pages/Services/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';

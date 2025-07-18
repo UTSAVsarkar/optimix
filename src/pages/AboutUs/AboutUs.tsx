@@ -1,8 +1,9 @@
 import { Box, Typography } from '@mui/material';
-import MotionLine from '../components/MotionLine';
-import Contact from './Contact';
+import MotionLine from '../../components/MotionLine';
+import Contact from '../Contact';
 import { motion } from 'framer-motion';
 import SouthEastIcon from "@mui/icons-material/SouthEast";
+import ExpertiseSection from './ExpertiseSection';
 
 function AboutUs() {
     return (
@@ -34,6 +35,9 @@ function AboutUs() {
                     </h1>
                     <SouthEastIcon className="responsive-icon" />
                 </motion.div>
+
+                <ExpertiseSection />
+
                 {/* Responsive heading / icon styles */}
                 <style>
                     {`
@@ -51,7 +55,6 @@ function AboutUs() {
           `}
                 </style>
             </Box>
-
             <Contact />
         </>
     );
