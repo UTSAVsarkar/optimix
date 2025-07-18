@@ -11,6 +11,8 @@ import {
     TimelineConnector,
     TimelineContent,
     TimelineDot,
+    timelineOppositeContentClasses,
+    TimelineOppositeContent,
 } from "@mui/lab";
 import MotionLine from "../../components/MotionLine";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
@@ -54,20 +56,41 @@ export default function Services() {
                     <SouthEastIcon className="responsive-icon" />
                 </motion.div>
 
-
                 {/* Services timeline */}
-                <Timeline position="alternate">
-                    {services.map((service, index) => (
-                        <TimelineItem>
-                            <TimelineSeparator>
-                                <TimelineConnector />
-                                <TimelineDot style={{background: '#AF6118'}} />
-                                <TimelineConnector />
-                            </TimelineSeparator>
-                            <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                <ServiceCard service={service} />
-                            </TimelineContent>
-                        </TimelineItem>
+                <Timeline
+                    position={'alternate'}
+                >
+                    {services.map((service) => (
+                        isMobile ? (
+                            <Timeline
+                                sx={{
+                                    [`& .${timelineOppositeContentClasses.root}`]: {
+                                        flex: 0.1,
+                                    },
+                                }}
+                            >
+                                <TimelineItem>
+                                    <TimelineOppositeContent color="textSecondary" />
+                                    <TimelineSeparator>
+                                        <TimelineDot />
+                                        <TimelineConnector />
+                                    </TimelineSeparator>
+                                    <TimelineContent>
+                                        <ServiceCard service={service} />
+                                    </TimelineContent>
+                                </TimelineItem>
+                            </Timeline>
+                        ) :
+                            (<TimelineItem>
+                                <TimelineSeparator>
+                                    <TimelineConnector />
+                                    <TimelineDot style={{ background: '#AF6118' }} />
+                                    <TimelineConnector />
+                                </TimelineSeparator>
+                                <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                    <ServiceCard service={service} />
+                                </TimelineContent>
+                            </TimelineItem>)
                     ))}
                 </Timeline>
 
