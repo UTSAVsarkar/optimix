@@ -48,9 +48,11 @@ const MissionVision = (props: Props) => {
                     maxWidth: 600,
                     p: 4,
                     border: "1px solid #e0e0e0",
-                    borderRadius: 3,
                     textAlign: "center",
                     boxShadow: 3,
+                }}
+                style={{
+                    borderLeft: '5px solid #AF6118',
                 }}
             >
                 <Typography variant="h5" fontWeight={700} color="#AF6118">
@@ -72,9 +74,11 @@ const MissionVision = (props: Props) => {
                     maxWidth: 600,
                     p: 4,
                     border: "1px solid #e0e0e0",
-                    borderRadius: 3,
                     textAlign: "center",
                     boxShadow: 3,
+                }}
+                style={{
+                    borderLeft: '5px solid #AF6118',
                 }}
             >
                 <Typography variant="h5" fontWeight={700} color="#AF6118">
@@ -96,9 +100,11 @@ const MissionVision = (props: Props) => {
                     maxWidth: 600,
                     p: 4,
                     border: "1px solid #e0e0e0",
-                    borderRadius: 3,
                     textAlign: "center",
                     boxShadow: 3,
+                }}
+                style={{
+                    borderLeft: '5px solid #AF6118',
                 }}
             >
                 <Typography variant="h5" fontWeight={700} color="#AF6118">
