@@ -33,7 +33,6 @@ const Home: React.FC<Props> = ({ onNavChange }) => {
                 }}
                 initial={{ scale: 1.05, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
             />
 
             {/* Heading Overlay */}
