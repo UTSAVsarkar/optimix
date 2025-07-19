@@ -52,8 +52,6 @@ function Projects() {
           `}
                 </style>
             </Box>
-
-
             <Contact />
         </>
     );
