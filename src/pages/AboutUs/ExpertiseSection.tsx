@@ -37,7 +37,7 @@ export default function ExpertiseSection() {
         With{' '}
         <span
           style={{
-            borderBottom: '3px solid orange',
+            borderBottom: '3px solid #AF6118',
             paddingBottom: '2px',
           }}
         >
