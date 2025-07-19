@@ -1,7 +1,7 @@
 import { Box, Button } from '@mui/material';
-import MotionLine from '../components/MotionLine';
-import RoadmapFlow from '../components/RoadmapFlow';
-import SectionIntro from '../components/SectionIntro';
+import MotionLine from '../../components/MotionLine';
+import RoadmapFlow from './RoadmapFlow';
+import SectionIntro from '../../components/SectionIntro';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 

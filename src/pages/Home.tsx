@@ -4,7 +4,7 @@ import Heading from "../components/Heading";
 import Contact from "./Contact";
 import { useRef, useEffect } from "react";
 import AboutUsIntro from "../IntroPages/AboutIntro/AboutUsIntro";
-import ProjectsIntro from "../IntroPages/ProjectsIntro";
+import ProjectsIntro from "../IntroPages/ProjectIntro/ProjectsIntro";
 import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
 import ParallaxImage from "../components/ParallaxImage";
 
