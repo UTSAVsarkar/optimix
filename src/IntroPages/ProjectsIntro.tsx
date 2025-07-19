@@ -1,5 +1,3 @@
-import MotionLine from '../components/MotionLine';
-import Sample from '../components/Sample';
 import SectionIntro from '../components/SectionIntro';
 
 function ProjectsIntro() {
@@ -11,9 +9,8 @@ function ProjectsIntro() {
                     "Every project has its",
                     "unique DNA"
                 ]}
+                bgcolor="black"
             />
-            <MotionLine />
-            <Sample />
         </>
     );
 }

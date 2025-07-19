@@ -18,8 +18,8 @@ import SouthEastIcon from "@mui/icons-material/SouthEast";
 import { motion } from "framer-motion";
 import Contact from "../Contact";
 import { services } from "./ServicesConfig";
-import ServiceImageComponent from "./ServiceImageComponent";
 import { ServiceCard } from "./ServiceCard";
+import ParallaxImage from "../../components/ParallaxImage";
 
 export default function Services() {
     const theme = useTheme();
@@ -98,9 +98,10 @@ export default function Services() {
                 </style>
             </Box>
 
-            {/* Side image only on desktop */}
-            {!isMobile && <ServiceImageComponent />}
-
+             <ParallaxImage
+                image="https://static.wixstatic.com/media/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg/v1/fill/w_3456,h_1320,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg"
+                text="You can dream, create, design, and build the most wonderful place in the world. But it requires people to make the dream a reality."
+            />
             <Contact />
         </>
     );

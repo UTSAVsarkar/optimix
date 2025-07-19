@@ -4,9 +4,9 @@ import Heading from "../components/Heading";
 import Contact from "./Contact";
 import { useRef, useEffect } from "react";
 import AboutUsIntro from "../IntroPages/AboutIntro/AboutUsIntro";
-import ClientIntro from "../IntroPages/ClientIntro";
 import ProjectsIntro from "../IntroPages/ProjectsIntro";
 import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
+import ParallaxImage from "../components/ParallaxImage";
 
 interface Props {
     scrollToContact?: boolean;
@@ -87,8 +87,11 @@ const Home: React.FC<Props> = ({ scrollToContact, onNavChange }) => {
 
             <AboutUsIntro onNavChange={onNavChange} />
             <ServicesIntro onNavChange={onNavChange} />
+            <ParallaxImage
+                image="https://static.wixstatic.com/media/c837a6_c4ec010a6ed34a1e8b7068fffc7e6062~mv2.jpg/v1/fill/w_1960,h_1946,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_c4ec010a6ed34a1e8b7068fffc7e6062~mv2.jpg"
+                text="You can dream, create, design, and build the most wonderful place in the world. But it requires people to make the dream a reality."
+            />
             <ProjectsIntro />
-            <ClientIntro />
             <div ref={contactRef}>
                 <Contact />
             </div>
