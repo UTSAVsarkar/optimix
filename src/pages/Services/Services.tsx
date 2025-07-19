@@ -16,7 +16,7 @@ import {
 import MotionLine from "../../components/MotionLine";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
 import { motion } from "framer-motion";
-import Contact from "../Contact";
+import Contact from "../Contact/Contact";
 import { services } from "./ServicesConfig";
 import { ServiceCard } from "./ServiceCard";
 import ParallaxImage from "../../components/ParallaxImage";

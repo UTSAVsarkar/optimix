@@ -17,7 +17,6 @@ const Contact = () => {
             sx={{
                 py: { xs: 8, md: 10 },  // vertical padding from top and bottom
                 px: { xs: 2, md: 4 },   // horizontal padding on smaller screens
-                backgroundColor: "#f0f0f0",
             }}
         >
             <Box

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import MotionLine from '../../components/MotionLine';
-import Contact from '../Contact';
+import Contact from '../Contact/Contact';
 import { motion } from 'framer-motion';
 import SouthEastIcon from "@mui/icons-material/SouthEast";
 import ProjectShowcase from './ProjectShowcase';

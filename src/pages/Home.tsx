@@ -1,30 +1,19 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Form from "../components/Form";
 import Heading from "../components/Heading";
-import Contact from "./Contact";
-import { useRef, useEffect } from "react";
+import Contact from "./Contact/Contact";
 import AboutUsIntro from "../IntroPages/AboutIntro/AboutUsIntro";
 import ProjectsIntro from "../IntroPages/ProjectIntro/ProjectsIntro";
 import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
 import ParallaxImage from "../components/ParallaxImage";
 
 interface Props {
-    scrollToContact?: boolean;
     onNavChange: (item: string) => void;
 }
 
-const Home: React.FC<Props> = ({ scrollToContact, onNavChange }) => {
+const Home: React.FC<Props> = ({ onNavChange }) => {
     const { scrollY } = useScroll();
-
     const bgY = useTransform(scrollY, [0, 500], ["0%", "50%"]);
-
-    const contactRef = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        if (scrollToContact && contactRef.current) {
-            contactRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, [scrollToContact]);
 
     return (
         <>
@@ -92,9 +81,7 @@ const Home: React.FC<Props> = ({ scrollToContact, onNavChange }) => {
                 text="You can dream, create, design, and build the most wonderful place in the world. But it requires people to make the dream a reality."
             />
             <ProjectsIntro onNavChange={onNavChange} />
-            <div ref={contactRef}>
-                <Contact />
-            </div>
+            <Contact />
         </>
     );
 }
