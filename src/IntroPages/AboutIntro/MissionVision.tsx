@@ -1,149 +1,156 @@
-import React, { useRef } from "react";
-import { Box, Typography, Button } from "@mui/material";
-import { motion, useInView } from "framer-motion";
+import React from 'react';
+import { Box, Grid, Typography, Button, Container } from '@mui/material';
+import { motion, Transition, Variants } from 'framer-motion';
 
 interface Props {
     onNavChange: (item: string) => void;
 }
 
-const MotionBox = motion(Box);
-
-const MissionVision = (props: Props) => {
-
-    const handleButtonClick = () => {
-        window.scrollTo({ top: 0 });
-        props.onNavChange('About Us')
-    };
-
-    const missionRef = useRef(null);
-    const visionRef = useRef(null);
-    const valuesRef = useRef(null);
-    const buttonRef = useRef(null);
-
-    const isMissionInView = useInView(missionRef, { once: true });
-    const isVisionInView = useInView(visionRef, { once: true });
-    const isValuesInView = useInView(valuesRef, { once: true });
-    const isButtonInView = useInView(buttonRef, { once: true });
-
-    return (
-        <Box
-            sx={{
-                py: 10,
-                px: 2,
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 6,
-                bgcolor: "#fff",
-            }}
-        >
-            {/* Mission */}
-            <MotionBox
-                ref={missionRef}
-                initial={{ x: -100, opacity: 0 }}
-                animate={isMissionInView ? { x: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                whileHover={{ scale: 1.02 }}
-                sx={{
-                    maxWidth: 600,
-                    p: 4,
-                    border: "1px solid #e0e0e0",
-                    textAlign: "center",
-                    boxShadow: 3,
-                }}
-                style={{
-                    borderLeft: '5px solid #AF6118',
-                }}
-            >
-                <Typography variant="h5" fontWeight={700} color="#AF6118">
-                    Our Mission
-                </Typography>
-                <Typography mt={2}>
-                    To help manufacturers, suppliers, and OEMs optimize resources and scale profitably through expert-led execution and data-driven strategies.
-                </Typography>
-            </MotionBox>
-
-            {/* Vision */}
-            <MotionBox
-                ref={visionRef}
-                initial={{ x: 100, opacity: 0 }}
-                animate={isVisionInView ? { x: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                whileHover={{ scale: 1.02 }}
-                sx={{
-                    maxWidth: 600,
-                    p: 4,
-                    border: "1px solid #e0e0e0",
-                    textAlign: "center",
-                    boxShadow: 3,
-                }}
-                style={{
-                    borderLeft: '5px solid #AF6118',
-                }}
-            >
-                <Typography variant="h5" fontWeight={700} color="#AF6118">
-                    Our Vision
-                </Typography>
-                <Typography mt={2}>
-                    To be the go-to partner for manufacturers by connecting supply, strategy, and innovation for scalable, future-ready growth.
-                </Typography>
-            </MotionBox>
-
-            {/* Our Core Values */}
-            <MotionBox
-                ref={valuesRef}
-                initial={{ x: -100, opacity: 0 }}
-                animate={isValuesInView ? { x: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                whileHover={{ scale: 1.02 }}
-                sx={{
-                    maxWidth: 600,
-                    p: 4,
-                    border: "1px solid #e0e0e0",
-                    textAlign: "center",
-                    boxShadow: 3,
-                }}
-                style={{
-                    borderLeft: '5px solid #AF6118',
-                }}
-            >
-                <Typography variant="h5" fontWeight={700} color="#AF6118">
-                    Our Core Values
-                </Typography>
-                <Typography mt={2}>
-                    <b>Empowerment. Execution. Innovation. Collaboration. Value.</b> <br />
-                    From insight to execution — delivering measurable results where it matters most.
-                </Typography>
-            </MotionBox>
-
-            {/* Button */}
-            <motion.div
-                ref={buttonRef}
-                initial={{ opacity: 0 }}
-                animate={isButtonInView ? { opacity: 1 } : {}}
-                transition={{ duration: 1, delay: 0.2 }}
-            >
-                <Button
-                    variant="outlined"
-                    sx={{
-                        borderColor: "#AF6118",
-                        color: "#AF6118",
-                        fontWeight: 600,
-                        px: 4,
-                        py: 1.5,
-                        "&:hover": {
-                            bgcolor: "#AF6118",
-                            color: "#fff",
-                            borderColor: "#AF6118",
-                        },
-                    }}
-                    onClick={handleButtonClick}
-                >
-                    Learn More
-                </Button>
-            </motion.div>
-        </Box>
-    );
+const textVariant: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (custom: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: (custom as number) * 0.3,
+            duration: 0.6,
+            ease: [0.25, 0.8, 0.25, 1], // Use cubic bezier instead of string 'easeOut'
+        } as Transition,
+    }),
 };
 
-export default MissionVision;
+const containerVariant = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
+};
+
+export default function MissionVision(props: Props) {
+    const handleButtonClick = () => {
+        window.scrollTo({ top: 0 });
+        props.onNavChange('About Us');
+    };
+
+    return (
+        <Box sx={{ bgcolor: "white", color: "common.white", py: 8 }}>
+            <Container maxWidth="lg">
+                <Grid container>
+                    {/* Left (Image with overlay text) */}
+                    <Grid
+                    size={{xs: 12, md: 6}}
+                        sx={{ position: "relative", overflow: "hidden" }}
+                    >
+                        <img
+                            src="https://static.wixstatic.com/media/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg/v1/fill/w_3456,h_1320,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg"
+                            alt="Tech visual"
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                        />
+
+                        <Box
+                            sx={{
+                                position: "absolute",
+                                inset: 0,
+                                bgcolor: "rgba(0,0,0,0.4)",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                px: 2,
+                                textAlign: "center",
+                            }}
+                        >
+                            <Typography variant="h5" fontWeight={600}>
+                                Unprecedented Velocity.
+                            </Typography>
+                            <Typography variant="h5" fontWeight={600}>
+                                Impeccable Reliability.
+                            </Typography>
+                        </Box>
+                    </Grid>
+
+                    {/* Right (Animated Text) */}
+                    <Grid
+                    size={{xs: 12, md: 6}}
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            p: 4,
+                            background: 'black',
+                        }}
+                    >
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={containerVariant}
+                            style={{ maxWidth: 480 }}
+                        >
+                            {[
+                                {
+                                    title: "Our Mission",
+                                    text: "To help manufacturers, suppliers, and OEMs optimize resources and scale profitably through expert-led execution and data-driven strategies.",
+                                },
+                                {
+                                    title: "Our Vision",
+                                    text: "To be the go-to partner for manufacturers by connecting supply, strategy, and innovation for scalable, future-ready growth.",
+                                },
+                                {
+                                    title: "Our Core Values",
+                                    text: "Empowerment. Execution. Innovation. Collaboration. Value.",
+                                },
+                                {
+                                    title: "",
+                                    text: "From insight to execution — delivering measurable results where it matters most.",
+                                },
+                            ].map((item, index) => (
+                                <motion.div key={index} custom={index} variants={textVariant}>
+                                    {item.title && (
+                                        <Typography
+                                            color="#AF6118"
+                                            variant="h6"
+                                            fontWeight={700}
+                                            gutterBottom
+                                        >
+                                            {item.title}
+                                        </Typography>
+                                    )}
+                                    <Typography variant="body1" color="grey.400" paragraph>
+                                        {item.text}
+                                    </Typography>
+                                </motion.div>
+                            ))}
+
+                            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                <motion.div custom={5} variants={textVariant}>
+                                    <Button
+                                        variant="outlined"
+                                        sx={{
+                                            mt: 2,
+                                            color: 'white',
+                                            borderColor: 'white',
+                                            "&:hover": {
+                                                bgcolor: "#AF6118",
+                                                borderColor: 'white'
+                                            },
+                                            px: 4,
+                                            py: 1.5,
+                                            textTransform: "none",
+                                            fontWeight: 600,
+                                        }}
+                                        onClick={handleButtonClick}
+                                    >
+                                        Learn More
+                                    </Button>
+                                </motion.div>
+                            </Box>
+                        </motion.div>
+                    </Grid>
+                </Grid>
+            </Container>
+        </Box>
+    );
+}
