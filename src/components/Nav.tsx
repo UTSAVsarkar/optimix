@@ -72,13 +72,15 @@ export default function Nav(props: Props) {
       <AppBar
         component="nav"
         sx={{
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(12px)',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
           position: 'absolute',
-          top: 10,
           left: 0,
           width: '100%',
           zIndex: 10,
+          borderRadius: 2,
+          padding: 1
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>

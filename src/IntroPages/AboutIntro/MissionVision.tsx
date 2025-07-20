@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Box, Grid, Typography, Button, Container } from '@mui/material';
-import { motion, Transition, Variants } from 'framer-motion';
+import { motion, Transition, useScroll, useSpring, useTransform, Variants } from 'framer-motion';
 
 interface Props {
     onNavChange: (item: string) => void;
@@ -34,20 +34,41 @@ export default function MissionVision(props: Props) {
         props.onNavChange('About Us');
     };
 
+    const imageRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: imageRef,
+        offset: ["start end", "end start"], // from fully visible to fully gone
+    });
+
+    const scale = useTransform(scrollYProgress, [0.2, 0.5], [1, 1.2]);
+    const smoothScale = useSpring(scale, {
+        stiffness: 100,
+        damping: 30,
+    });
+
     return (
         <Box sx={{ bgcolor: "white", color: "common.white", py: 8 }}>
             <Container maxWidth="lg">
                 <Grid container>
                     {/* Left (Image with overlay text) */}
                     <Grid
-                    size={{xs: 12, md: 6}}
+                        size={{ xs: 12, md: 6 }}
                         sx={{ position: "relative", overflow: "hidden" }}
+                        ref={imageRef}
                     >
-                        <img
-                            src="https://static.wixstatic.com/media/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg/v1/fill/w_3456,h_1320,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg"
-                            alt="Tech visual"
-                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                        />
+                        <motion.div
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                                scale: smoothScale,
+                            }}
+                        >
+                            <img
+                                src="https://static.wixstatic.com/media/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg/v1/fill/w_3456,h_1320,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg"
+                                alt="Tech visual"
+                                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                            />
+                        </motion.div>
 
                         <Box
                             sx={{
@@ -73,7 +94,7 @@ export default function MissionVision(props: Props) {
 
                     {/* Right (Animated Text) */}
                     <Grid
-                    size={{xs: 12, md: 6}}
+                        size={{ xs: 12, md: 6 }}
                         sx={{
                             display: "flex",
                             alignItems: "center",
