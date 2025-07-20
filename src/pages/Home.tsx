@@ -21,7 +21,7 @@ const Home: React.FC<Props> = ({ onNavChange }) => {
             <motion.div
                 style={{
                     position: "relative",
-                    backgroundImage: `url(${process.env.PUBLIC_URL + "/backimg.png"})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL + "/backimg.webp"})`,
                     backgroundSize: "cover",
                     backgroundPositionY: bgY,
                     backgroundRepeat: "no-repeat",
