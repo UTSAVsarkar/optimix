@@ -70,7 +70,7 @@ const Home: React.FC<Props> = ({ onNavChange }) => {
             `,
                 }}
             >
-                <Form />
+            <Form />
             </div>
 
             <AboutUsIntro onNavChange={onNavChange} />
