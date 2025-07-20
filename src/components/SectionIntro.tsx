@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Box, Typography, Stack } from '@mui/material';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { motion, useInView } from 'framer-motion';
+import { KeyboardDoubleArrowDown } from '@mui/icons-material';
 
 const MotionStack = motion(Stack);
 const MotionTypography = motion(Typography);
@@ -31,8 +31,8 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
         <Box
           ref={ref}
           sx={{
-            px: { xs: 2, md: 8 },
-            py: { xs: 6, md: 10 },
+            px: { xs: 2, md: 4 },
+            py: { xs: 2, md: 2 },
             display: 'flex',
             flexDirection: { xs: 'column', md: 'row' },
             alignItems: 'center',
@@ -42,7 +42,7 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
         >
           {/* Left side - Title */}
           <MotionStack
-            spacing={2}
+            spacing={1}
             alignItems="center"
             initial={{ x: -100, opacity: 0 }}
             animate={inView ? { x: 0, opacity: 1 } : {}}
@@ -59,10 +59,9 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
             >
               {title}
             </Typography>
-            <ArrowDownwardIcon
+            <KeyboardDoubleArrowDown
               sx={{
-                transform: 'rotate(-45deg)',
-                fontSize: '10rem',
+                fontSize: '8rem',
                 color: textColor,
               }}
             />

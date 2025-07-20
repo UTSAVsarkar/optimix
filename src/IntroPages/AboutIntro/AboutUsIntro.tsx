@@ -12,10 +12,9 @@ function AboutUsIntro(props: Props) {
             <SectionIntro
                 title="ABOUT US"
                 descriptionLines={[
-                    "At Optimax, we simplify",
-                    "construction processes",
-                    "to increase your project",
-                    "velocity."
+                    "We simplify construction",
+                    "processes to increase",
+                    "your project velocity",
                 ]}
             />
             <MotionLine />

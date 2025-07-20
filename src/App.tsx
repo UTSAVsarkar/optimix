@@ -6,7 +6,7 @@ import Services from './pages/Services/Services';
 import Projects from './pages/Projects/Projects';
 import ContactWrap from './pages/Contact/ContactWrap';
 
-const navItems = ['Home', 'About Us', 'Services', 'Projects', 'Contact'];
+const navItems = ['Home', 'About Us', 'Services', 'Commodity', 'Projects', 'Contact'];
 
 function App() {
   const [activeNavItem, setActiveNavItem] = useState('Home');
