@@ -31,8 +31,8 @@ export default function Form() {
         e.preventDefault();
         setLoading(true); // Start loading spinner
 
-        const url = "https://script.google.com/macros/s/AKfycbwNMENhPnvKalBcBtZVb2AwGXiFGYpHbRGz_G4879gvqPHOdKBsPXAqcFDs8k_lDwX6vg/exec";
-
+        const url = "https://script.google.com/macros/s/AKfycbymrO_WO0esLtfa9jEF2fzY0LAZX49OdkrsQXqDCFBLPdH4Ogc6QT1hwW4zuKFLdlCwBA/exec"
+        
         fetch(url, {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
