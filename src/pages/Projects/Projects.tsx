@@ -2,8 +2,8 @@ import { Box, Typography } from '@mui/material';
 import MotionLine from '../../components/MotionLine';
 import Contact from '../Contact/Contact';
 import { motion } from 'framer-motion';
-import SouthEastIcon from "@mui/icons-material/SouthEast";
 import ProjectShowcase from './ProjectShowcase';
+import { KeyboardDoubleArrowDown } from '@mui/icons-material';
 
 function Projects() {
     return (
@@ -33,7 +33,7 @@ function Projects() {
                         impact across engineering, <br />
                         sourcing and operations
                     </h1>
-                    <SouthEastIcon className="responsive-icon" />
+                    <KeyboardDoubleArrowDown className="responsive-icon" />
                 </motion.div>
 
                 <ProjectShowcase />

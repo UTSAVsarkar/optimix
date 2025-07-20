@@ -2,8 +2,8 @@ import { Box, Typography } from '@mui/material';
 import MotionLine from '../../components/MotionLine';
 import Contact from '../Contact/Contact';
 import { motion } from 'framer-motion';
-import SouthEastIcon from "@mui/icons-material/SouthEast";
 import ExpertiseSection from './ExpertiseSection';
+import { KeyboardDoubleArrowDown } from '@mui/icons-material';
 
 function AboutUs() {
     return (
@@ -33,7 +33,7 @@ function AboutUs() {
                         engineering and manufacturing <br />
                         ecosystem
                     </h1>
-                    <SouthEastIcon className="responsive-icon" />
+                    <KeyboardDoubleArrowDown className="responsive-icon" />
                 </motion.div>
 
                 <ExpertiseSection />

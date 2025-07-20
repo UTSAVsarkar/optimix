@@ -14,12 +14,12 @@ import {
     TimelineDot,
 } from "@mui/lab";
 import MotionLine from "../../components/MotionLine";
-import SouthEastIcon from "@mui/icons-material/SouthEast";
 import { motion } from "framer-motion";
 import Contact from "../Contact/Contact";
 import { services } from "./ServicesConfig";
 import { ServiceCard } from "./ServiceCard";
 import ParallaxImage from "../../components/ParallaxImage";
+import { KeyboardDoubleArrowDown } from "@mui/icons-material";
 
 export default function Services() {
     const theme = useTheme();
@@ -52,7 +52,7 @@ export default function Services() {
                         performance across every <br />
                         stage of operations
                     </h1>
-                    <SouthEastIcon className="responsive-icon" />
+                    <KeyboardDoubleArrowDown className="responsive-icon" />
                 </motion.div>
 
                 {/* Services timeline */}
