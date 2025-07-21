@@ -58,7 +58,7 @@ const Home: React.FC<Props> = ({ onNavChange }) => {
                     position: "absolute",
                     bottom: 20,
                     right: 20,
-                    backgroundColor: Color.blue,
+                    backgroundColor: Color.orange,
                     color: "white",
                     padding: "15px 20px",
                     borderRadius: "8px",

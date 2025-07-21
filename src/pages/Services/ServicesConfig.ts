@@ -39,6 +39,11 @@ export const services = [
         description:
           "Reduce import dependency and develop cost-efficient domestic supply chains across India and APAC.",
       },
+      {
+        subheading: "Export Support & Global Readiness",
+        description:
+          "Assist suppliers and manufacturers in meeting global compliance, documentation, and supply chain readiness for part exports.",
+      },
     ],
   },
   {

@@ -26,7 +26,7 @@ function ServicesIntro(props: Props) {
                     "Providing engineering",
                     "consulting solutions"
                 ]}
-                bgcolor={Color.blue}
+                bgcolor={Color.orange}
             >
                 <ProjectGrid />
                 <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 4, md: 6 } }}>
