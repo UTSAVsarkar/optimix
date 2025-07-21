@@ -6,8 +6,8 @@ import AboutUsIntro from "../IntroPages/AboutIntro/AboutUsIntro";
 import ProjectsIntro from "../IntroPages/ProjectIntro/ProjectsIntro";
 import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
 import ParallaxImage from "../components/ParallaxImage";
-import Commodity from "../IntroPages/Commodity/Commodity";
 import { Color } from "../colors";
+import CommodityIntro from "../IntroPages/CommodityIntro/CommodityIntro";
 
 interface Props {
     onNavChange: (item: string) => void;
@@ -81,7 +81,7 @@ const Home: React.FC<Props> = ({ onNavChange }) => {
                 image="https://static.wixstatic.com/media/c837a6_c4ec010a6ed34a1e8b7068fffc7e6062~mv2.jpg/v1/fill/w_1960,h_1946,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_c4ec010a6ed34a1e8b7068fffc7e6062~mv2.jpg"
                 text="You can dream, create, design, and build the most wonderful place in the world. But it requires people to make the dream a reality."
             />
-            <Commodity onNavChange={onNavChange} />
+            <CommodityIntro onNavChange={onNavChange} />
             <ProjectsIntro onNavChange={onNavChange} />
             <Contact />
         </>

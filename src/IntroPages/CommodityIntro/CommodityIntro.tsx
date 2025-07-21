@@ -1,18 +1,19 @@
-import SectionIntro from '../../components/SectionIntro';
-import { motion, Transition, useInView, Variants } from 'framer-motion';
-import MotionLine from '../../components/MotionLine';
-import CommoditiesGrid from './CommoditiesGrid';
-import { Box, Button } from '@mui/material';
+import { Box, Button } from "@mui/material";
+import { motion, Transition, Variants } from "framer-motion";
+import MotionLine from "../../components/MotionLine";
+import SectionIntro from "../../components/SectionIntro";
+import CommoditiesGrid from "./CommoditiesGrid";
+
 
 interface Props {
     onNavChange: (item: string) => void;
 }
 
-function Commodity(props: Props) {
+function CommodityIntro(props: Props) {
 
     const handleButtonClick = () => {
         window.scrollTo({ top: 0 });
-        props.onNavChange('Services')
+        props.onNavChange('Commodity')
     };
 
     const textVariant: Variants = {
@@ -68,4 +69,4 @@ function Commodity(props: Props) {
     );
 }
 
-export default Commodity;
+export default CommodityIntro;

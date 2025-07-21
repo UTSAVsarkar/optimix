@@ -5,6 +5,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Services from './pages/Services/Services';
 import Projects from './pages/Projects/Projects';
 import ContactWrap from './pages/Contact/ContactWrap';
+import Commodity from './pages/Commodity/Commodity';
 
 const navItems = ['Home', 'About Us', 'Services', 'Commodity', 'Projects', 'Contact'];
 
@@ -23,6 +24,8 @@ function App() {
         return <AboutUs />;
       case 'Services':
         return <Services />;
+      case 'Commodity':
+        return <Commodity />
       case 'Projects':
         return <Projects />;
       case 'Contact':
