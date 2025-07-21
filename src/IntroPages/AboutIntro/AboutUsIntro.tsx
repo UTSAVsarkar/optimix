@@ -16,8 +16,9 @@ function AboutUsIntro(props: Props) {
                     "processes to increase",
                     "your project velocity",
                 ]}
+                bgcolor="black"
             />
-            <MotionLine />
+            <MotionLine color='white'/>
             <MissionVision onNavChange={props.onNavChange} />
         </>
     );

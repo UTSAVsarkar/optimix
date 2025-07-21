@@ -44,6 +44,7 @@ export default function Services() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeIn" }}
+                    style={{ marginTop: '2rem' }}
                 >
                     <Typography variant="h4">At Optimax Advisory</Typography>
                     <h1 className="responsive-heading">

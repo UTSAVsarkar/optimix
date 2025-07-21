@@ -20,7 +20,6 @@ const MotionLine: React.FC<MotionLineProps> = ({ color = '#000' }) => {
         height: '0.5px',
         backgroundColor: color,
         width: '100%',
-        margin: '2rem 0',
       }}
     />
   );
