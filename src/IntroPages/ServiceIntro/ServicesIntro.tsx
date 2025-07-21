@@ -2,8 +2,9 @@ import { Button, Box } from '@mui/material';
 import SectionIntro from '../../components/SectionIntro';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import ProjectGrid from './ServiceGrid';
 import { Color } from '../../colors';
+import MotionLine from '../../components/MotionLine';
+import WhatWeCanDo from './WhatWeCanDo';
 
 interface Props {
     onNavChange: (item: string) => void;
@@ -28,13 +29,14 @@ function ServicesIntro(props: Props) {
                 ]}
                 bgcolor={Color.orange}
             >
-                <ProjectGrid />
+                <MotionLine color='white' />
+                <WhatWeCanDo />
                 <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 4, md: 6 } }}>
                     <Box mt={5} textAlign="center" ref={ref}>
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={isInView ? { opacity: 1 } : {}}
-                            transition={{ duration: 0.8, ease: 'easeOut' }}
+                            transition={{ duration: 0.6, ease: 'easeOut' }}
                         >
                             <Button
                                 variant="outlined"
