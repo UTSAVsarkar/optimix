@@ -1,7 +1,6 @@
 import { Box, Grid, Typography, Card, CardContent } from "@mui/material";
 import { Factory, LocalShipping, BarChart, Psychology } from "@mui/icons-material";
 import { motion } from "framer-motion";
-import { Color } from "../../colors";
 
 const services = [
     {
