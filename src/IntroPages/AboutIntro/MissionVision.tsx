@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Box, Grid, Typography, Button, Container } from '@mui/material';
 import { motion, Transition, useScroll, useSpring, useTransform, Variants } from 'framer-motion';
+import MotionLine from '../../components/MotionLine';
 
 interface Props {
     onNavChange: (item: string) => void;
@@ -110,6 +111,8 @@ export default function MissionVision(props: Props) {
                             variants={containerVariant}
                             style={{ maxWidth: 480 }}
                         >
+                            <h3>At Optimax Advisory, we bring 25+ years of engineering and manufacturing expertise to help businesses streamline operations, optimize sourcing, and scale with data-driven precision.</h3>
+                            <MotionLine color='white' />
                             {[
                                 {
                                     title: "Our Mission",

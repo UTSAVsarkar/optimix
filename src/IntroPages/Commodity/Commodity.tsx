@@ -1,0 +1,74 @@
+import SectionIntro from '../../components/SectionIntro';
+import { motion, Transition, useInView, Variants } from 'framer-motion';
+import { useRef } from 'react';
+import MotionLine from '../../components/MotionLine';
+import CommoditiesGrid from './CommoditiesGrid';
+import { Box, Button } from '@mui/material';
+
+interface Props {
+    onNavChange: (item: string) => void;
+}
+
+function Commodity(props: Props) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: '-100px 0px' });
+
+    const handleButtonClick = () => {
+        window.scrollTo({ top: 0 });
+        props.onNavChange('Services')
+    };
+
+    const textVariant: Variants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: (custom: number) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: (custom as number) * 0.3,
+                duration: 0.6,
+                ease: [0.25, 0.8, 0.25, 1], // Use cubic bezier instead of string 'easeOut'
+            } as Transition,
+        }),
+    };
+
+    return (
+        <>
+            <SectionIntro
+                title="COMMODITIES"
+                descriptionLines={[
+                    "From Concept",
+                    "to Component"
+                ]}
+            >
+                <MotionLine />
+                <CommoditiesGrid />
+                <Box py={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <motion.div custom={5} variants={textVariant}>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                mt: 2,
+                                color: 'black',
+                                borderColor: '#AF6118',
+                                "&:hover": {
+                                    bgcolor: "#AF6118",
+                                    borderColor: 'white',
+                                    color: 'white'
+                                },
+                                px: 4,
+                                py: 1.5,
+                                textTransform: "none",
+                                fontWeight: 600,
+                            }}
+                            onClick={handleButtonClick}
+                        >
+                            Learn More
+                        </Button>
+                    </motion.div>
+                </Box>
+            </SectionIntro>
+        </>
+    );
+}
+
+export default Commodity;
