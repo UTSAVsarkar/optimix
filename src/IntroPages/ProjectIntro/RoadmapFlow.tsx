@@ -83,7 +83,7 @@ const RoadmapFlow = () => {
 
   return (
     <ReactFlowProvider>
-      <div style={{ width: "100%", overflowX: "auto" }}>
+      <div style={{ width: "100%", overflowX: "hidden" }}>
         <div
           style={{
             width: canvasWidth,

@@ -7,6 +7,7 @@ import ProjectsIntro from "../IntroPages/ProjectIntro/ProjectsIntro";
 import ServicesIntro from "../IntroPages/ServiceIntro/ServicesIntro"
 import ParallaxImage from "../components/ParallaxImage";
 import Commodity from "../IntroPages/Commodity/Commodity";
+import { Color } from "../colors";
 
 interface Props {
     onNavChange: (item: string) => void;
@@ -57,7 +58,7 @@ const Home: React.FC<Props> = ({ onNavChange }) => {
                     position: "absolute",
                     bottom: 20,
                     right: 20,
-                    backgroundColor: "#AF6118",
+                    backgroundColor: Color.blue,
                     color: "white",
                     padding: "15px 20px",
                     borderRadius: "8px",

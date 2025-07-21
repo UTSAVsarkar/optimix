@@ -3,6 +3,7 @@ import SectionIntro from '../../components/SectionIntro';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import ProjectGrid from './ServiceGrid';
+import { Color } from '../../colors';
 
 interface Props {
     onNavChange: (item: string) => void;
@@ -25,7 +26,7 @@ function ServicesIntro(props: Props) {
                     "Providing engineering",
                     "consulting solutions"
                 ]}
-                bgcolor="#AF6118"
+                bgcolor={Color.blue}
             >
                 <ProjectGrid />
                 <Box sx={{ px: { xs: 2, md: 6 }, py: { xs: 4, md: 6 } }}>

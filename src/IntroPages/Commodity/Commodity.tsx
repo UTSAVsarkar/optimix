@@ -1,6 +1,5 @@
 import SectionIntro from '../../components/SectionIntro';
 import { motion, Transition, useInView, Variants } from 'framer-motion';
-import { useRef } from 'react';
 import MotionLine from '../../components/MotionLine';
 import CommoditiesGrid from './CommoditiesGrid';
 import { Box, Button } from '@mui/material';
@@ -10,8 +9,6 @@ interface Props {
 }
 
 function Commodity(props: Props) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: '-100px 0px' });
 
     const handleButtonClick = () => {
         window.scrollTo({ top: 0 });
