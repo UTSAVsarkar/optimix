@@ -1,10 +1,14 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import MotionLine from '../../components/MotionLine';
 import Contact from '../Contact/Contact';
 import { motion } from 'framer-motion';
 import { KeyboardDoubleArrowDown } from '@mui/icons-material';
+import CommodityFlow from './CommodityFlow';
+import CommodityFlowMobile from './CommodityFlowMobile';
 
 function Commodity() {
+    const isMobile = useMediaQuery('(max-width:768px)');
+
     return (
         <>
             <Box
@@ -35,8 +39,10 @@ function Commodity() {
                     </h1>
                     <KeyboardDoubleArrowDown className="responsive-icon" />
                 </motion.div>
-
-
+                <style>
+                    {`.react-flow__attribution { display: none !important; }`}
+                </style>
+                {isMobile ? <CommodityFlowMobile /> : <CommodityFlow />}
                 {/* Responsive heading / icon styles */}
                 <style>
                     {`
