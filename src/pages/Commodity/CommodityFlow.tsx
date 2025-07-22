@@ -95,7 +95,7 @@ export default function CommodityFlow() {
     const handleClose = () => setOpen(false);
 
     return (
-        <div style={{ height: 800, width: '100%', borderRadius: 12 }}>
+        <div style={{ height: 800, width: '100%', borderRadius: 12, overflowX: "hidden" }}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}

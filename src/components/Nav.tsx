@@ -79,7 +79,6 @@ export default function Nav(props: Props) {
           left: 0,
           width: '100%',
           zIndex: 10,
-          borderRadius: 2,
           padding: 1
         }}
       >
