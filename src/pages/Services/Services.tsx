@@ -102,6 +102,7 @@ export default function Services() {
              <ParallaxImage
                 image="https://static.wixstatic.com/media/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg/v1/fill/w_3456,h_1320,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/84770f_b0f8a4cbc4934dd98fbc047c3ec83d8d~mv2.jpg"
                 text="You can dream, create, design, and build the most wonderful place in the world. But it requires people to make the dream a reality."
+                author="WALT DISNEY"
             />
             <Contact />
         </>

@@ -111,57 +111,57 @@ export default function CommodityFlow() {
                 zoomOnDoubleClick={false}
             />
 
-<Dialog
-    open={open}
-    onClose={handleClose}
-    fullWidth
-    maxWidth="sm"
-    PaperProps={{
-        sx: {
-            borderRadius: 4,
-            background: 'linear-gradient(135deg, #212121, #333)',
-            color: '#fff',
-            boxShadow: 8,
-            p: 2,
-        },
-    }}
->
-    <DialogTitle
-        sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontWeight: 'bold',
-            fontSize: 20,
-            borderBottom: '1px solid #555',
-        }}
-    >
-        {modalLabel}
-        <IconButton onClick={handleClose} sx={{ color: '#fff' }}>
-            <CloseIcon />
-        </IconButton>
-    </DialogTitle>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                fullWidth
+                maxWidth="sm"
+                PaperProps={{
+                    sx: {
+                        borderRadius: 4,
+                        background: 'linear-gradient(135deg, #212121, #333)',
+                        color: '#fff',
+                        boxShadow: 8,
+                        p: 2,
+                    },
+                }}
+            >
+                <DialogTitle
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                        borderBottom: '1px solid #555',
+                    }}
+                >
+                    {modalLabel}
+                    <IconButton onClick={handleClose} sx={{ color: '#fff' }}>
+                        <CloseIcon />
+                    </IconButton>
+                </DialogTitle>
 
-    <DialogContent
-        sx={{
-            mt: 2,
-            fontSize: 16,
-            color: '#eee',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: 100,
-        }}
-    >
-        {typeof modalLabel === 'string' ? (
-            <Typography variant="h6" sx={{ color: '#ffcc80' }}>
-                {modalLabel}
-            </Typography>
-        ) : (
-            modalLabel
-        )}
-    </DialogContent>
-</Dialog>
+                <DialogContent
+                    sx={{
+                        mt: 2,
+                        fontSize: 16,
+                        color: '#eee',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        minHeight: 100,
+                    }}
+                >
+                    {typeof modalLabel === 'string' ? (
+                        <Typography variant="h6" sx={{ color: '#ffcc80' }}>
+                            {modalLabel}
+                        </Typography>
+                    ) : (
+                        modalLabel
+                    )}
+                </DialogContent>
+            </Dialog>
 
         </div>
     );

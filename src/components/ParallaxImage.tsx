@@ -3,6 +3,7 @@ import { ParallaxBanner, ParallaxProvider } from "react-scroll-parallax";
 
 interface Props {
     image: string,
+    author: string,
     text: string
 }
 
