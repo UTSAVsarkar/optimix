@@ -38,7 +38,7 @@ export default function ParallaxImage(props: Props) {
                 >
                     {props.text}
                     <br />
-                    <i style={{ fontSize: 15 }}>WALT DISNEY</i>
+                    <i style={{ fontSize: 15 }}>{props.author}</i>
                 </div>
             </ParallaxBanner>
         </ParallaxProvider>
